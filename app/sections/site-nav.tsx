@@ -27,7 +27,7 @@ export function SiteNav({ email }: SiteNavProps) {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent tracking-tighter uppercase">
-          Warren SJ.
+          Warren SJ
         </span>
         <div className="hidden md:flex gap-8">
           <NavItem label="About" target="about" />

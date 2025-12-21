@@ -55,7 +55,7 @@ export const profile: Profile = {
   github: 'https://github.com/Warren-SJ',
   linkedin: 'https://linkedin.com/in/Warren-Jayakumar',
   objective:
-    'I leverage my skills in the field of Electronic and Telecommunication engineering to innovate solutions for real-world problems. Passionate about hardware accelerator design for AI and domain-specific hardware accelerators.',
+    'I would like to leverage my skills in the field of Electronic and Telecommunication engineering to provide innovative solutions for real-world problems. I am passionate about hardware accelerator design for AI and domain-specific hardware accelerators and am eager to contribute to cutting-edge projects in Physical AI.',
 };
 
 export const projects: Project[] = [
@@ -66,7 +66,7 @@ export const projects: Project[] = [
       'Co-designing an agentic AI system to control RF chains at a hardware level. Bridging the gap between AI advances and the physical layer of telecommunications.',
     tags: ['AI', 'RF', 'Hardware-Software Co-design'],
     category: 'ai',
-    repo: 'agentic-rf-ai',
+    repo: '#',
   },
   {
     title: 'SIMD Processor for CNN Acceleration',
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       'Designed a SIMD processor for accelerating convolutional neural networks. Developed the ISA, microarchitecture, and individual convolution accelerators.',
     tags: ['Computer Architecture', 'CNN', 'SIMD', 'SystemVerilog'],
     category: 'hardware',
-    repo: 'simd-cnn-accelerator',
+    repo: 'https://github.com/orgs/SIMD-Processor-for-CNN/repositories',
   },
   {
     title: 'RISC-V Pipelined Processor',
@@ -84,7 +84,7 @@ export const projects: Project[] = [
       'Designed a full RISC-V pipelined processor using SystemVerilog supporting R,U,I,S,J, and SB type instructions of the RV32I set.',
     tags: ['SystemVerilog', 'RISC-V', 'Digital Design'],
     category: 'hardware',
-    repo: 'riscv-pipelined',
+    repo: 'https://github.com/Warren-SJ/RISCV-Pipelined-Processor',
   },
   {
     title: 'RISC-V Single Cycle Processor',
@@ -93,7 +93,7 @@ export const projects: Project[] = [
       'Designed a RISC-V single cycle processor using System Verilog. Capable of performing RV32I base instructions.',
     tags: ['SystemVerilog', 'RISC-V', 'CPU'],
     category: 'hardware',
-    repo: 'riscv-single-cycle',
+    repo: 'https://github.com/Warren-SJ/RISCV-Single-Cycle-Processor',
   },
   {
     title: 'Floating Point Unit Design',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       'Designed a floating point unit using SystemVerilog. Handles additions, subtractions, multiplications, and divisions.',
     tags: ['Digital Logic', 'FPU', 'SystemVerilog'],
     category: 'hardware',
-    repo: 'fpu-design',
+    repo: 'https://github.com/Warren-SJ/FPU/',
   },
   {
     title: 'SuperStart 1.0',
@@ -111,7 +111,7 @@ export const projects: Project[] = [
       'Co-designed a vehicle jump starter using supercapacitors. Features analog charging/discharging circuits and custom PCB.',
     tags: ['Power Electronics', 'Altium', 'SolidWorks'],
     category: 'embedded',
-    repo: 'superstart-1.0',
+    repo: 'https://github.com/Warren-SJ/Superstart',
   },
   {
     title: 'Battery Profiler',
@@ -120,7 +120,7 @@ export const projects: Project[] = [
       'Device capable of discharging batteries at constant current/power while measuring voltage and plotting discharge curves.',
     tags: ['Embedded Systems', 'Power Electronics', 'UI Design'],
     category: 'embedded',
-    repo: 'battery-profiler',
+    repo: 'https://github.com/Warren-SJ/batteryprofiler',
   },
   {
     title: 'Analog Solar Tracker',
@@ -129,7 +129,7 @@ export const projects: Project[] = [
       'Solar tracker using only analog components, focused on enhancing knowledge in PID control and PCB design.',
     tags: ['PID Control', 'Analog Design', 'PCB'],
     category: 'embedded',
-    repo: 'analog-solar-tracker',
+    repo: 'https://github.com/Warren-SJ/Solar_Tracker',
   },
   {
     title: 'Robot Competition Design',
@@ -138,7 +138,7 @@ export const projects: Project[] = [
       'Designed and produced an autonomous robot for the EN-3533 competition, integrating complex sensor suites and actuators.',
     tags: ['Robotics', 'Sensors', 'Actuators'],
     category: 'embedded',
-    repo: 'robot-design-en3533',
+    repo: 'https://github.com/Warren-SJ/Robotdesign',
   },
 ];
 

@@ -24,7 +24,7 @@ export default function Page() {
       <ProjectsSection profile={profile} projects={projects} />
       <EducationSection education={education} />
       <CertificationsSection certifications={certifications} />
-      <VolunteerSection text={volunteerText} />
+      {/* <VolunteerSection text={volunteerText} /> */}
       <FooterSection profile={profile} />
     </div>
   );

@@ -4,6 +4,14 @@ import React, { useEffect, useRef } from 'react';
 
 type PCBTraceSegment = { x1: number; y1: number; x2: number; y2: number };
 type PCBTrace = { segments: PCBTraceSegment[]; hasVia: boolean; viaSize: number };
+type Particle = {
+  x: number;
+  y: number;
+  r: number;
+  vy: number;
+  vx: number;
+  a: number;
+};
 
 export function PCBBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -18,10 +26,12 @@ export function PCBBackground() {
 
     let animationFrameId: number;
     let traces: PCBTrace[] = [];
+    let particles: Particle[] = [];
+    let lastTime = performance.now();
 
     const generateTraces = () => {
       const currentTraces: PCBTrace[] = [];
-      const numTraces = Math.floor((canvas.width * canvas.height) / 18000);
+      const numTraces = Math.floor((canvas.width * canvas.height) / 15000);
 
       for (let i = 0; i < numTraces; i++) {
         let x = Math.random() * canvas.width;
@@ -63,6 +73,18 @@ export function PCBBackground() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       generateTraces();
+
+      const particleCount = Math.floor((canvas.width * canvas.height) / 20000);
+      particles = Array.from({ length: particleCount }, (): Particle => {
+        return {
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: 0.6 + Math.random() * 1.6,
+          vy: 0.25 + Math.random() * 0.9,
+          vx: -0.15 + Math.random() * 0.3,
+          a: 0.3 + Math.random() * 0.05,
+        };
+      });
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -74,9 +96,30 @@ export function PCBBackground() {
     handleResize();
 
     const render = () => {
+      const now = performance.now();
+      const dt = Math.min(2, (now - lastTime) / 16.67);
+      lastTime = now;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const { x: mx, y: my } = mouseRef.current;
       const glowRadius = 220;
+
+      for (const p of particles) {
+        p.y += p.vy * dt;
+        p.x += p.vx * dt;
+
+        if (p.y - p.r > canvas.height) {
+          p.y = -p.r;
+          p.x = Math.random() * canvas.width;
+        }
+        if (p.x + p.r < 0) p.x = canvas.width + p.r;
+        if (p.x - p.r > canvas.width) p.x = -p.r;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(148, 163, 184, ${p.a})`;
+        ctx.fill();
+      }
 
       traces.forEach((trace) => {
         trace.segments.forEach((seg) => {

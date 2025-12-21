@@ -21,8 +21,8 @@ export function HeroSection({ profile }: HeroSectionProps) {
           Warren <span className="text-blue-500">Jayakumar</span>
         </h1>
         <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl font-light leading-relaxed">
-          {profile.title} <span className="text-slate-800 mx-2">/</span>{' '}
-          <span className="text-indigo-400">{profile.subtitle}</span>
+          <span className="block">{profile.title}</span>
+          <span className="block text-indigo-400 mt-1">{profile.subtitle}</span>
         </p>
         <div className="flex gap-4">
           <SocialIcon href={profile.github} icon={<Github size={24} />} />

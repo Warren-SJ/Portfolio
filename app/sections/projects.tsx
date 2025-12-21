@@ -66,14 +66,17 @@ export function ProjectsSection({ profile, projects }: ProjectsSectionProps) {
                     <Zap size={24} />
                   )}
                 </div>
-                <a
-                  href={`${profile.github}/${project.repo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 hover:bg-slate-800 rounded-lg text-slate-500 hover:text-white transition-colors"
-                >
-                  <Github size={20} />
-                </a>
+                {project.repo && project.repo.trim() !== '#' ? (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-slate-800 rounded-lg text-slate-500 hover:text-white transition-colors"
+                    aria-label={`Open ${project.title} repository`}
+                  >
+                    <Github size={20} />
+                  </a>
+                ) : null}
               </div>
               <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
                 {project.title}
