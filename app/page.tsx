@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { PCBBackground } from './components/pcb-background';
+import { PeekingCat } from './components/peeking-cat';
 import { certifications, education, experience, profile, projects, volunteerText } from './data/portfolio';
 
 import { CertificationsSection } from './sections/certifications';
@@ -17,6 +18,7 @@ export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30 font-sans overflow-x-hidden">
       <PCBBackground />
+      <PeekingCat />
       <SiteNav email={profile.email} />
       <HeroSection profile={profile} />
       <ObjectiveSection objective={profile.objective} />
