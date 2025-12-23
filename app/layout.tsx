@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Warren Samuel Jayakumar",
+  title: "Warren Samuelson Jayakumar",
   description: "My personal portfolio website built with Next.js",
 };
 
