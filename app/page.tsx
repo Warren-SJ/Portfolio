@@ -15,10 +15,12 @@ import { SiteNav } from './sections/site-nav';
 import { VolunteerSection } from './sections/volunteer';
 
 export default function Page() {
+  const showCat = process.env.SHOW_CAT === 'true';
+
   return (
     <div className="relative min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30 font-sans overflow-x-hidden">
       <PCBBackground />
-      <PeekingCat />
+      {showCat && <PeekingCat />}
       <SiteNav email={profile.email} />
       <HeroSection profile={profile} />
       <ObjectiveSection objective={profile.objective} />
