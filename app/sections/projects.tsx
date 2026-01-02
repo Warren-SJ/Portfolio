@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
-import { Brain, Cpu, Github, Zap } from 'lucide-react';
+import { Computer, Cpu, Github, Zap } from 'lucide-react';
 import type { Profile, Project, ProjectCategory } from '../data/portfolio';
 import { SectionTitle } from '../components/section-title';
 
@@ -26,7 +26,7 @@ export function ProjectsSection({ profile, projects }: ProjectsSectionProps) {
         <div className="container mx-auto max-w-5xl">
           <SectionTitle title="Creations" subtitle="Engineering Portfolio" />
           <div className="grid md:grid-cols-4 gap-8 mb-12">
-            {(['all', 'hardware', 'ai', 'embedded'] as Tab[]).map((tab) => (
+            {(['all', 'hardware', 'software', 'embedded'] as Tab[]).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -53,15 +53,15 @@ export function ProjectsSection({ profile, projects }: ProjectsSectionProps) {
                   className={`p-3 rounded-2xl ${
                     project.category === 'hardware'
                       ? 'bg-indigo-500/10 text-indigo-400'
-                      : project.category === 'ai'
+                      : project.category === 'software'
                         ? 'bg-blue-500/10 text-blue-400'
                         : 'bg-emerald-500/10 text-emerald-400'
                   }`}
                 >
                   {project.category === 'hardware' ? (
                     <Cpu size={24} />
-                  ) : project.category === 'ai' ? (
-                    <Brain size={24} />
+                  ) : project.category === 'software' ? (
+                    <Computer size={24} />
                   ) : (
                     <Zap size={24} />
                   )}

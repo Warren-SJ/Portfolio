@@ -8,7 +8,7 @@ export type Profile = {
   objective: string;
 };
 
-export type ProjectCategory = 'ai' | 'hardware' | 'embedded';
+export type ProjectCategory = 'software' | 'hardware' | 'embedded';
 
 export type Project = {
   title: string;
@@ -65,9 +65,10 @@ export const projects: Project[] = [
     description:
       'Co-designing an agentic AI system to control RF chains at a hardware level. Bridging the gap between AI advances and the physical layer of telecommunications.',
     tags: ['AI', 'RF', 'Hardware-Software Co-design'],
-    category: 'ai',
+    category: 'software',
     repo: '#',
   },
+  
   {
     title: 'SIMD Processor for CNN Acceleration',
     date: 'Oct - Dec 2025',
@@ -140,6 +141,15 @@ export const projects: Project[] = [
     category: 'embedded',
     repo: 'https://github.com/Warren-SJ/Robotdesign',
   },
+  {
+    title: 'APEX-GRID',
+    date: 'July - Nov 2025',
+    description:
+      'Designed a webapp to monitor the maintenance of electric transformaers. Uses an AI model to detect possible faults in transfomers.',
+    tags: ['AI', 'Computer Vision', 'Web Development'],
+    category: 'software',
+    repo: 'https://github.com/Warren-SJ/Transformer-Tracker',
+  }
 ];
 
 export const education: EducationItem[] = [

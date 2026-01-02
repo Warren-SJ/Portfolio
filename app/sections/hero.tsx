@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Github, Linkedin } from 'lucide-react';
+import { Cpu, FileText, Github, Linkedin } from 'lucide-react';
 import type { Profile } from '../data/portfolio';
 import { SocialIcon } from '../components/social-icon';
 
@@ -27,6 +27,12 @@ export function HeroSection({ profile }: HeroSectionProps) {
         <div className="flex gap-4">
           <SocialIcon href={profile.github} icon={<Github size={24} />} />
           <SocialIcon href={profile.linkedin} icon={<Linkedin size={24} />} />
+          <SocialIcon
+              href="/cv.pdf"
+              icon={<FileText size={22} />}
+              download="Warren-Jayakumar-CV.pdf"
+              ariaLabel="Download CV"
+            />
         </div>
       </div>
     </section>
